@@ -1,0 +1,109 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <% articles.forEach(function(article, index) { %>
+            <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>"
+                class="<%= index === 0 ? 'active' : '' %>"></li>
+            <% }) %>
+    </ol>
+    <div class="carousel-inner">
+        <% articles.forEach(function(article, index) { %>
+            <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                <a href="/articles/<%= article.id %>">
+                    <img class="d-block w-100" src="<%= article.coverImagePath %>" alt="<%= article.title %>">
+                </a>
+                <div class="carousel-caption">
+                    <h5>
+                        <%= article.title %>
+                    </h5>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<main>
+    <div class="flex-1">
+        <div class="flex-container">
+            <h2>Online Articles</h2>
+            <% articles.forEach(article=> { %>
+                <div style="display: flex; flex-direction: row;">
+                    <a href="/articles/<%= article.id %>">
+                        <div style="flex: 1;">
+                            <img height="150" width="225" src="<%= article.coverImagePath %>">
+                        </div>
+                    </a>
+                    <div style="flex: 2; margin-left: 10px; margin-right:10px;">
+                        <a href="/articles/<%= article.id %>" style="font-size:20px; font-style: italic;">
+                            <%= article.title %>
+                        </a>
+                        <p>
+                            <% if (article.description.length> 350) { %>
+                                <%= article.description.slice(0, 350) + '...' %>
+                                    <% } else { %>
+                                        <%= article.description %>
+                                            <% } %>
+                        </p>
+                    </div>
+                </div>
+
+                <% }) %>
+
+        </div>
+
+        <div class="flex-container">
+            <h2>Recently Added</h2>
+            <div>
+                <% books.forEach(book=> { %>
+                    <a href="/books/<%= book.id %>">
+                        <img height="200" width="133" style="margin-right: 20px;" src="<%= book.coverImagePath %>">
+                    </a>
+                    <% }) %>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-2">
+        <h2>Our recommendation</h2>
+        <div class="flex-container">
+            <div class="recommendation" style="display: flex; flex-direction: row;">
+                <div style="flex: 1;">
+                    <% if (books.length> 0) { %>
+                        <a href="/books/<%= books[0].id %>">
+                            <img height="150" width="100" src="<%= books[0].coverImagePath %>">
+                        </a>
+                        <% } %>
+                </div>
+                <div style="flex: 2;">
+                    <p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor vel velit eu
+                            accumsan. Sed odio erat, eleifend in volutpat a, rhoncus eu leo. In interdum vel urna non
+                            finibus. Suspendisse ac est vitae ipsum pretium aliquet et sit amet felis.</em></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <h2>Calendar</h2>
+            <div class="calendar">
+                <%- include('./partials/calendar.ejs') %>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2023 Library website, Alex Petrescu</p>
+</footer>
+
+<script>
+    $(document).ready(function () {
+        $('#carouselExampleIndicators').carousel();
+    });
+</script>

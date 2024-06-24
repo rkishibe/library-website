@@ -1,0 +1,66 @@
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-column {
+  flex-basis: 50%;
+}
+
+img{
+  height:300px;
+  width:200px;
+}
+
+
+.form-group {
+  display: flex;
+  margin: 10px;
+}
+
+.form-group label {
+  width: 150px;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  /* flex: 1; */
+  padding: 5px;
+  border: 1px solid #f1f3e4;
+  border-radius: 3px;
+  margin: 10px;
+  vertical-align: middle;
+  width: 80%;
+}
+
+input{
+  margin-bottom: 10px;
+}
+
+label{
+  margin-right: 5px;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.btn{
+  padding: 10px;
+  font-size: 18px;
+}
+
+.book-container{
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+
+.book-image{
+  margin:10px;
+  flex:1;
+}
+
+.book-details{
+  flex:2;
+}

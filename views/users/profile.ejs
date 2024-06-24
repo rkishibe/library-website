@@ -1,0 +1,30 @@
+<% if (userRole==='reader' ) {%>
+<h2>Your reserved books</h2>
+<% reservedBooks.forEach(book=> { %>
+    <a href="/books/<%= book.id %>">
+        <img height="150" width="100" style="margin-right:10px" src="<%= book.coverImagePath %>">
+    </a>
+    <% }) %>
+<% } %>
+<% if (userRole==='writer' ) {%>
+    <h2> Your articles</h2>
+    <% articles.forEach(article=> { %>
+        <div style="display: flex; flex-direction: row;">
+            <a href="/articles/<%= article.id %>">
+                <div style="flex: 1;">
+                    <img height="150" width="225" src="<%= article.coverImagePath %>">
+                </div>
+            </a>
+            <div style="flex: 2; margin-left: 10px; margin-right:10px;">
+                <p>
+                    <% if (article.description.length> 350) { %>
+                        <%= article.description.slice(0, 350) + '...' %>
+                            <% } else { %>
+                                <%= article.description %>
+                                    <% } %>
+                </p>
+            </div>
+        </div>
+
+        <% }) %>
+<% } %>

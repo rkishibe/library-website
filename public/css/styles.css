@@ -1,0 +1,135 @@
+/* Set a global font family and background color */
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #fffefa;
+    padding: 10%;
+    padding-top: 0%;
+
+}
+
+/* Style headings */
+h1,
+h2,
+h3 {
+    color: #160b49;
+    /* Text color for headings */
+    margin-top: 20px;
+}
+
+/* Add spacing between headings and paragraphs */
+h1,
+h2,
+h3,
+p {
+    margin-bottom: 15px;
+}
+
+/* Style links */
+a {
+    color: #0d1c47;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #193788;
+}
+
+/* Style buttons */
+.btn {
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0d1c47;
+    color: #f8f5f0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.form-btn:hover {
+    background-color: #c8aa76;
+    color: #0d1c47;
+}
+
+.btn:hover,
+.btn:visited {
+    background-color: #c8aa76;
+    color: #0d1c47;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #e7e0e0;
+    border-radius: 4px;
+    background-color: #e3dacd;
+}
+
+/* navbar style */
+.navbar {
+    background-color: #c8aa76;
+}
+
+.navbar-nav .nav-link {
+    color: #62420a;
+    font-size: 20px;
+}
+
+main {
+    display: flex;
+}
+
+.flex-1 {
+    width: 60%;
+}
+
+.flex-2 {
+    width: 30%;
+}
+
+.social-media-icons {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.social-media-icons a {
+    margin-right: 10px;
+    color: #0d1c47;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.recommendation {
+    display: flex;
+    flex-direction: row;
+}
+
+.recommendation img {
+    width: 150px;
+    height: 225px;
+    margin-right: 10px;
+}
+
+/* Additional styles for text in the recommendation section */
+.recommendation p {
+    flex: 2;
+}
+
+.carousel-inner{
+    height: 400px;
+}
+
+.logo{
+    width:45px;
+    height:45px; 
+}
+
+img{
+    margin-bottom: 10px;
+}

@@ -1,0 +1,42 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/book.css">
+</head>
+
+<body>
+  <h2>
+    <%= book.title %>
+  </h2>
+  <div class="book-container">
+    <div class="book-image">
+      <img src="<%= book.coverImagePath %>">
+    </div>
+    <div class="book-details">
+      <div><b>Author:</b>
+        <%= book.author.name %>
+      </div>
+      <div><b>Publish Date:</b>
+        <%= book.publishDate.toDateString() %>
+      </div>
+      <div><b>Page Count:</b>
+        <%= book.pageCount %>
+      </div>
+      <div><b>Description:</b>
+        <%= book.description %>
+      </div>
+      <div class="book-buttons">
+        <% if(userRole=='admin' ) { %>
+          <button type="button" class="btn btn-primary"
+            onclick="window.location.href='/books/<%= book.id %>/edit'">Edit</button>
+          <%- include('../partials/deleteForm', { url: `/books/${book.id}` }) %>
+            <% } %>
+              <button type="button" class="btn btn-primary"
+                onclick="window.location.href='/authors/<%= book.author.id %>'">View Author</button>
+              <% if(userRole !='guest' ) { %>
+                <form action="/books/<%= book.id %>/reserve" method="POST">
+                  <button type="submit" class="btn btn-primary">Reserve book</button>
+                </form>
+                <% } %>
+      </div>
+    </div>
+  </div>
+</body>

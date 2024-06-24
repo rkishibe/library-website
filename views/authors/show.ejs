@@ -1,0 +1,15 @@
+<h2>
+  <%= author.name %>
+</h2>
+<img height="300" width="200" src="<%= author.ImagePath %>">
+<% if(userRole=='admin' ) { %>
+  <button type="button" class="btn btn-primary"
+    onclick="window.location.href='/authors/<%= author.id %>/edit'">Edit</button>
+  <%- include('../partials/deleteForm', { url: `/authors/${author.id}` }) %>
+    <% }%>
+      <% if (booksByAuthor.length> 0) { %>
+        <h2>Books By Author</h2>
+        <% booksByAuthor.forEach(book=> { %>
+          <img height="150" width="100" src="<%= book.coverImagePath %>">
+          <% }) %>
+            <% } %>

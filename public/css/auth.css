@@ -1,0 +1,50 @@
+.flex-container {
+    display: flex;
+    flex-wrap:wrap;
+}
+
+img {
+    display: block;
+    align-items: center;
+}
+
+.btn {
+    display: inline;
+    padding: 7px;
+    /* margin-right: 10px; */
+}
+
+.frm-btns {
+    display: block;
+}
+
+input[type="text"] textarea {
+    width: 100px;
+}
+
+.h4 {
+    display: inline;
+}
+
+.author-container {
+    display: inline-block;
+    margin: auto;
+    vertical-align: top;
+    width:30%;
+}
+
+.author-name {
+    font-weight: bold;
+    width: fit-content;
+    font-size: 20px;
+    text-align: justify;
+    /* margin: 10px 0; */
+}
+
+.author-image {
+    height: auto;
+}
+
+.author-buttons{
+    align-items: center;
+}

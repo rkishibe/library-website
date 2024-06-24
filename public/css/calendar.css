@@ -1,0 +1,33 @@
+#calendar {
+  font-size:18px;
+
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #c8aa76;
+}
+
+td {
+  cursor: pointer;
+}
+
+td:hover {
+  background-color:#e1cba5 ;
+}
+
+td.selected {
+  background-color: #0d1c47;
+  color: #fff;
+}

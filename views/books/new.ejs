@@ -1,0 +1,10 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/book.css">
+</head>
+<h2>New Book</h2>
+<form action="/books" method="POST">
+  <%- include('_form_fields') %>
+  <button class="btn" href="/books">Cancel</button>
+  <button class="btn" type="submit">Create</button>
+  <%- include('../partials/errorMessage.ejs') %>
+</form>

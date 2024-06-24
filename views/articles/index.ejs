@@ -1,0 +1,9 @@
+  <h1>Article List</h1>
+   <div style="display:block;">
+    <% articles.forEach(function(article) { %>
+     
+      <h2> <a href="/articles/<%= article._id %>"><%= article.title %></a> </h2> 
+      <img width="450px" height="300px" src="<%= article.coverImagePath %>">
+    <% }); %>
+  </div>
+  

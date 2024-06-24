@@ -1,0 +1,26 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/auth.css">
+</head>
+<h2>Search Authors</h2>
+<form action="/authors" method="GET">
+  <h4>Name</h4>
+  <input type="text" name="name" value="<%= searchOptions.name %>">
+  <button type="submit" class="btn" style="margin-bottom: 12px; margin-left:5px; padding:6px;">Search</button>
+</form>
+<br>
+<div class="flex-container">
+  <% authors.forEach(author => { %>
+    <div class="author-container">
+      <h3 class="author-name"><%= author.name %></h3>
+      <img class="author-image" height="225" width="150" src="<%= author.ImagePath %>">
+      <div class="author-buttons">
+        <button type="button" class="btn btn-primary" onclick="window.location.href='/authors/<%= author.id %>'">View</button>
+
+        <% if(userRole=='admin' ) { %>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='/authors/<%= author.id %>/edit'">Edit</button>
+        <%- include('../partials/deleteForm', { url: `/authors/${author.id}` }) %>
+        <% } %>
+      </div>
+    </div>
+  <% }) %>
+</div>

@@ -1,0 +1,21 @@
+<head>
+    <title>Reserved Books</title>
+</head>
+<body>
+    <h1>Reserved Books</h1>
+
+    <div class="book-list">
+        <% if (books.length > 0) { %>
+            <ul>
+                <% books.forEach(function(book) { %>
+                    <li>
+                        <h2><%= book.title %></h2>
+                        <p><strong>Author:</strong> <%= book.author %></p>
+                        <img src="<%= book.coverImagePath %>">
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>No books reserved by you.</p>
+        <% } %>
+    </div>
